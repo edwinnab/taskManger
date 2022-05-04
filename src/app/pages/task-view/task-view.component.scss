@@ -1,11 +1,4 @@
 @import '../../../main-style';
-.centered-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
 
 .task-manager-container {
   display: flex;
@@ -107,7 +100,7 @@
     }
   }
 /*complete task styles*/
-  &.complete {
+  &.completed {
     text-decoration: line-through;
     opacity: 0.8;
   }

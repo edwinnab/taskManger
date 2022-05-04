@@ -5,12 +5,12 @@
       <h1 class="title has-text-primary">Lists</h1>
 
         <div class="list-menu">
-          <a class="list-menu-item">
-            <p>List 1</p>
+          <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
+            <p>{{list.title}}</p>
           </a>
         </div>
 
-      <button class="button is-primary has-text-white" (click)="createNewList()">+ New List</button>
+      <button class="button is-primary has-text-white" routerLink="/new-list">+ New List</button>
     </div>
 
     <div class="task-list-container has-background-light">
@@ -18,21 +18,13 @@
 
 
       <!-- Task Elements -->
-      <div class="task">
-        <p>This is a task element</p>
+      <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed}">
+        <p>{{task.title}}</p>
       </div>
-      <div class="task">
-        <p>This is a task element</p>
-      </div>
-      <div class="task">
-        <p>This is a task element</p>
-      </div>
-      <div class="task">
-        <p>This is a task element</p>
-      </div>
-      <div class="task complete">
-        <p>This is a task element</p>
-      </div>
+
+      <button routerLink="./new-task"  class="circle-add-button  button is-primary">
+        <img src="../../../assets/plus-icon.svg">
+      </button>
     </div>
 
   </div>
