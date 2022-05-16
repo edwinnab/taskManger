@@ -1,6 +1,5 @@
 const express = require('express')
 const mongoose = require('./db/mongoose')
-const bodyParser = require('body-parser')
 
 //initialize the app, define the port number
 const app = express()
